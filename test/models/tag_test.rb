@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TagTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  context 'these are validations' do
+    should validate_presence_of(:name)
+  end
 end

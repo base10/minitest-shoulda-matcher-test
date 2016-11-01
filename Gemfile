@@ -21,6 +21,7 @@ group :development, :test do
   gem 'minitest-spec-rails'
   gem 'maxitest'
   gem 'shoulda-matchers'
+  gem 'shoulda-context'
   gem 'factory_girl'
 end
 

@@ -1,8 +1,11 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require 'maxitest'
+require 'maxitest/autorun'
 require 'minitest-spec-rails'
 require 'shoulda-matchers'
+require 'shoulda-context'
 require 'factory_girl'
 
 class ActiveSupport::TestCase
@@ -10,4 +13,11 @@ class ActiveSupport::TestCase
   #fixtures :all
 
   # Add more helper methods to be used by all tests here...
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :minitest
+    with.library :rails
+  end
 end
